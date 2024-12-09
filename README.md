@@ -1,62 +1,62 @@
-## PDF para JSONL para Fine-tuning de Modelos Gemini
+## PDF to JSONL for Gemini Model Fine-tuning
 
-Este repositório contém um script Python para extrair texto de livros em PDF e convertê-los em arquivos JSONL formatados para o fine-tuning de modelos Gemini do Google.
+This repository contains a Python script to extract text from PDF books and convert it into JSONL files formatted for fine-tuning Google’s Gemini models.
 
-**Objetivo:**
+**Purpose:**
 
-O objetivo deste projeto é facilitar a preparação de dados para o fine-tuning de modelos Gemini. O script automatiza o processo de extração de texto de PDFs e formatação em JSONL, um formato adequado para o treinamento desses modelos.
+The goal of this project is to simplify the data preparation process for fine-tuning Gemini models. The script automates the extraction of text from PDFs and its formatting into JSONL, a format suitable for training these models.
 
-**Funcionalidades:**
+**Features:**
 
-* Extrai texto de arquivos PDF.
-* Segmenta o texto em chunks menores.
-* Formata o texto em JSONL, com cada linha contendo um chunk de texto.
-* Devolve um arquivo .jsonl no formato adequando para o fine-tuning do Gemini pela Google Cloud
+* Extracts text from PDF files.
+* Segments the text into smaller chunks.
+* Formats the text into JSONL, with each line containing a text chunk.
+* Outputs a .jsonl file in the format suitable for fine-tuning Gemini via Google Cloud.
 
-**Como usar:**
+**How to use:**
 
-1. **Instale as dependências:**
+1. **Install dependencies:**
 
 ```bash
 pip install -r PyPDF2 json
 ```
 
-2. **Execute o script:**
+2. **Run the script:**
 
 ```bash
 python datasetMaker.py
 ```
 
-<!-- **Exemplo de uso:**
+<!-- **Example usage:**
 
 ```bash
 python pdf_to_jsonl.py --input_dir ./pdfs --output_dir ./jsonl --chunk_size 500
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-* `--input_dir`: Caminho para o diretório contendo os arquivos PDF.
-* `--output_dir`: Caminho para o diretório onde os arquivos JSONL serão salvos.
-* `--chunk_size`: Tamanho dos chunks de texto (em número de palavras). -->
+* `--input_dir`: Path to the directory containing the PDF files.
+* `--output_dir`: Path to the directory where the JSONL files will be saved.
+* `--chunk_size`: Size of the text chunks (in number of words). -->
 
-**Formato do arquivo JSONL:**
+**JSONL File Format:**
 
-Cada linha do arquivo JSONL conterá um objeto JSON com a seguinte estrutura:
+Each line in the JSONL file will contain a JSON object with the following structure:
 
 ```json
-{"text": "Este é um exemplo de chunk de texto."}
+{"text": "This is an example of a text chunk."}
 ```
 
-**Observações:**
+**Notes:**
 
-* O script utiliza a biblioteca PyPDF2 para extrair texto de PDFs e json para criar o arquivo .jsonl
-<!-- * O tamanho dos chunks de texto pode ser ajustado de acordo com a necessidade. -->
-* Certifique-se de que os arquivos PDF estejam em um formato legível pela biblioteca PyPDF2.
+* The script uses the PyPDF2 library to extract text from PDFs and json to create the .jsonl file.
+<!-- * The chunk size can be adjusted according to need. -->
+* Ensure that the PDF files are in a format that can be read by the PyPDF2 library.
 
-**Contribuições:**
+**Contributions:**
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+Contributions are welcome! Feel free to open issues or pull requests.
 
-**Licença:**
+**License:**
 
-Este projeto está licenciado sob a licença GPL.
+This project is licensed under the GPL license.
