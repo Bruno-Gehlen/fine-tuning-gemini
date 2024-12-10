@@ -16,16 +16,13 @@ def extract_text_from_pdf(pdf_path, output_txt_path=None):
         str: Extracted text from the PDF.
     """
     try:
-        # Open the PDF file
         with open(pdf_path, 'rb') as file:
             pdf_reader = PyPDF2.PdfReader(file)
             extracted_text = ""
 
-            # Loop through all pages and extract text
             for page in pdf_reader.pages:
                 extracted_text += page.extract_text() + "\n"
         
-        # Save to a .txt file if output path is provided
         if output_txt_path:
             with open(output_txt_path, 'w') as txt_file:
                 txt_file.write(extracted_text)
@@ -46,7 +43,6 @@ def txt_to_jsonl(input_txt_path, output_jsonl_path):
         with open(input_txt_path, 'r') as txt_file:
             lines = txt_file.readlines()
 
-        # Prepare JSONL structured data
         jsonl_data = []
         for line in lines:
             line = line.strip()
@@ -61,12 +57,11 @@ def txt_to_jsonl(input_txt_path, output_jsonl_path):
             }
             jsonl_data.append(entry)
 
-        # Write to output JSONL file
         with open(output_jsonl_path, 'w') as jsonl_file:
             for entry in jsonl_data:
                 jsonl_file.write(json.dumps(entry) + '\n')
 
-        print(f"Conversion successful!")  #Output saved to: {output_jsonl_path}")
+        print(f"Conversion successful!") 
     except Exception as e:
         print(f"Error during conversion: {e}")
 
@@ -114,7 +109,7 @@ def delete_residual_files(file_paths):
 
 #===================================================================================================
 #pdf_file_path = "M. Shifman - Advanced Topics in Quantum Field Theory. A Lecture Course.pdf" 
-pdf_file_path = input("Enter the exactly name of the PDF file (including .pdf): ")
+pdf_file_path = input("Enter the exactly path/name of the PDF file (e.g. /home/user/book.pdf): ")
 output_txt_file_path = "extracted_text.txt" 
 input_txt_path = output_txt_file_path
 output_jsonl_path = 'converted_text.jsonl'
