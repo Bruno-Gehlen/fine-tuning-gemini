@@ -18,7 +18,7 @@ The goal of this project is to simplify the data preparation process for fine-tu
 1. **Install dependencies:**
 
 ```bash
-pip install -r PyPDF2 json
+pip install -r requirements.txt
 ```
 
 2. **Run the script:**
