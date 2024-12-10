@@ -52,6 +52,7 @@ Each line in the JSONL file will contain a JSON object with the following struct
 * The script uses the PyPDF2 library to extract text from PDFs and json to create the .jsonl file.
 <!-- * The chunk size can be adjusted according to need. -->
 * Ensure that the PDF files are in a format that can be read by the PyPDF2 library.
+* Your trained data can be used at the Google's Notebook [_evaluate_models_in_vertex_ai_studio_and_model_garden.ipynb_](https://github.com/Bruno-Gehlen/fine-tuning-gemini/blob/main/evaluate_models_in_vertex_ai_studio_and_model_garden.ipynb) present in this respository.
 
 **Contributions:**
 
